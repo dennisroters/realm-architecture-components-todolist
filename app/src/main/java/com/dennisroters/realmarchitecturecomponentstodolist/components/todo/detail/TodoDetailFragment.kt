@@ -4,11 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.dennisroters.realmarchitecturecomponentstodolist.components.todo.TodoListViewModel
 import com.dennisroters.realmarchitecturecomponentstodolist.R
-import kotlinx.android.synthetic.main.fragment_todo_detail.*
 
 class TodoDetailFragment : Fragment() {
 
@@ -25,6 +25,9 @@ class TodoDetailFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_todo_detail, null)
 
+        rootView.findViewById<TextView>(R.id.todoDetail_helperText).text = "todo detail fragment"
+
+
         initUI()
 
         return rootView
@@ -34,7 +37,6 @@ class TodoDetailFragment : Fragment() {
     // -- OTHER --------------------------------------------------------------------------------------------------------
 
     private fun initUI() {
-        todoDetail_helperText.text = "todo detail fragment"
 
     }
 }

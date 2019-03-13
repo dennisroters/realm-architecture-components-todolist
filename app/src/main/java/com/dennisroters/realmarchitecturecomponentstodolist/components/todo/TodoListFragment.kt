@@ -25,9 +25,8 @@ class TodoListFragment : Fragment() {
 
     private val todoListAdapter = TodoListAdapter()
 
-    // VIEWS
-    private lateinit var todoRecyclerView: RecyclerView
-    private lateinit var addTodoEditText: EditText
+    private var todoRecyclerView: RecyclerView? = null
+    private var addTodoEditText: EditText? = null
 
 
     // -- LIFECYCLE ----------------------------------------------------------------------------------------------------
@@ -48,12 +47,18 @@ class TodoListFragment : Fragment() {
         return rootView
     }
 
+    override fun onDetach() {
+        todoRecyclerView = null
+        addTodoEditText = null
+        super.onDetach()
+    }
+
 
     // -- OTHER --------------------------------------------------------------------------------------------------------
 
     private fun initUI() {
         // Todos list
-        todoRecyclerView.apply {
+        todoRecyclerView?.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = todoListAdapter
         }
@@ -62,7 +67,7 @@ class TodoListFragment : Fragment() {
         mItemTouchHelper.attachToRecyclerView(todoRecyclerView)
 
         // EditText
-        addTodoEditText.setOnEditorActionListener( TextView.OnEditorActionListener { v, actionId, event ->
+        addTodoEditText?.setOnEditorActionListener( TextView.OnEditorActionListener { v, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_DONE || (event != null && event.keyCode == KeyEvent.KEYCODE_ENTER)) {
                 viewModel.addTodo(todoList_addTodoEditText.text.toString())
                 todoList_addTodoEditText.setText("")
