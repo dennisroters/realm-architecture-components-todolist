@@ -29,7 +29,9 @@ class TodoListItemViewModel(val todo: Todo) : ViewModel() {
                 .equalTo("id", id)
                 .findFirst()
 
-            mTodo?.title = "DONE"
+            mTodo?.apply {
+                done = !done
+            }
         }
     }
 

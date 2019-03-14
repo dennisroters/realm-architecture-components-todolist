@@ -1,11 +1,8 @@
 package com.dennisroters.realmarchitecturecomponentstodolist
 
 import android.app.Application
-import androidx.fragment.app.Fragment
 import com.dennisroters.realmarchitecturecomponentstodolist.activities.MainActivity
-import com.dennisroters.realmarchitecturecomponentstodolist.utils.TransactionType
 import io.realm.Realm
-import android.graphics.Typeface
 
 
 

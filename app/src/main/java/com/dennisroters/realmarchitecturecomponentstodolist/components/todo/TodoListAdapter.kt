@@ -85,8 +85,9 @@ class TodoDiffCallback(private var newData: List<Todo>, private var oldData: Lis
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
         val sameTitle = oldData[oldItemPosition].title == newData[newItemPosition].title
         val sameId = oldData[oldItemPosition].id == newData[newItemPosition].id
+        val sameDone = oldData[oldItemPosition].done == newData[newItemPosition].done
 
-        val contentAreTheSame = sameTitle && sameId
+        val contentAreTheSame = sameTitle && sameId && sameDone
         return contentAreTheSame
     }
 
