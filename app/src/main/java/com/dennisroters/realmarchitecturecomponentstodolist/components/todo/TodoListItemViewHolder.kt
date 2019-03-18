@@ -2,10 +2,9 @@ package com.dennisroters.realmarchitecturecomponentstodolist.components.todo
 
 import android.graphics.Paint
 import android.view.View
+import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.dennisroters.realmarchitecturecomponentstodolist.R
-import com.dennisroters.realmarchitecturecomponentstodolist.navigation.NavigationManager
-import com.dennisroters.realmarchitecturecomponentstodolist.components.todo.detail.TodoDetailFragment
 import kotlinx.android.synthetic.main.viewholder_todo_list_item.view.*
 
 class TodoListItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
@@ -21,7 +20,8 @@ class TodoListItemViewHolder(private val view: View) : RecyclerView.ViewHolder(v
 
         // Container
         view.todoListItem_container.setOnClickListener {
-            NavigationManager().open(TodoDetailFragment())
+            val action = TodoListFragmentDirections.actionNext()
+            findNavController(view).navigate(action)
         }
 
         // Title
@@ -39,7 +39,7 @@ class TodoListItemViewHolder(private val view: View) : RecyclerView.ViewHolder(v
 
         // Checkbox
         view.todoListItem_checkbox.setOnClickListener {
-            viewModel!!.changeTitleToDone()
+            viewModel!!.changeDone()
         }
 
         // Remove

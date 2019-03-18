@@ -21,7 +21,7 @@ class TodoListItemViewModel(val todo: Todo) : ViewModel() {
         }
     }
 
-    fun changeTitleToDone() {
+    fun changeDone() {
         val id = todo.id
         realm.executeTransactionAsync {
             val mTodo = it
