@@ -6,6 +6,7 @@ import io.realm.Realm
 import androidx.recyclerview.widget.DiffUtil
 import com.dennisroters.realmarchitecturecomponentstodolist.R
 import com.dennisroters.realmarchitecturecomponentstodolist.database.realm.model.Todo
+import com.dennisroters.realmarchitecturecomponentstodolist.database.realm.utils.todoDao
 import com.dennisroters.realmarchitecturecomponentstodolist.utils.ItemTouchHelperAdapter
 import com.dennisroters.realmarchitecturecomponentstodolist.utils.inflate
 import java.util.*
@@ -62,7 +63,14 @@ class TodoListAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>(), ItemTouc
 //        HabitRepository(App.INSTANCE).update(habitsPositions)
     }
 
-    override fun onItemDismiss(position: Int) {}
+    override fun onItemDismiss(position: Int) {
+        val id = dataSet[position].id ?: return
+
+        // todo: do in repo
+        Realm.getDefaultInstance().executeTransactionAsync {
+            it.todoDao().deleteTodo(id)
+        }
+    }
 
 }
 

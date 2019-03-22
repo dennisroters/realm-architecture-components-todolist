@@ -1,7 +1,9 @@
 package com.dennisroters.realmarchitecturecomponentstodolist.utils
 
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.ItemTouchHelper
+import com.dennisroters.realmarchitecturecomponentstodolist.App
 
 
 class SimpleItemTouchHelperCallback(private val mAdapter: ItemTouchHelperAdapter) : ItemTouchHelper.Callback() {
@@ -11,7 +13,7 @@ class SimpleItemTouchHelperCallback(private val mAdapter: ItemTouchHelperAdapter
     }
 
     override fun isItemViewSwipeEnabled(): Boolean {
-        return false
+        return true
     }
 
     override fun getMovementFlags(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder): Int {
@@ -29,8 +31,10 @@ class SimpleItemTouchHelperCallback(private val mAdapter: ItemTouchHelperAdapter
         return true
     }
 
-    override fun onSwiped(viewHolder: RecyclerView.ViewHolder, i: Int) {
-//        mAdapter.onItemDismiss(viewHolder.adapterPosition)
+    override fun onSwiped(viewHolder: RecyclerView.ViewHolder, position: Int) {
+        mAdapter.onItemDismiss(viewHolder.adapterPosition)
+
+        Toast.makeText(App.INSTANCE, "remove todo", Toast.LENGTH_SHORT).show()
     }
 
     override fun clearView(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder) {

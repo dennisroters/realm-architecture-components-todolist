@@ -20,7 +20,7 @@ class TodoListItemViewHolder(private val view: View) : RecyclerView.ViewHolder(v
 
         // Container
         view.todoListItem_container.setOnClickListener {
-            val action = TodoListFragmentDirections.actionNext()
+            val action = TodoListFragmentDirections.actionNext(todoId = viewModel?.todo?.id)
             findNavController(view).navigate(action)
         }
 
