@@ -1,8 +1,8 @@
-package com.dennisroters.realmarchitecturecomponentstodolist.components.todo.detail
+package com.dennisroters.realmarchitecturecomponentstodolist.components.todoDetail
 
 import androidx.lifecycle.ViewModel
-import com.dennisroters.realmarchitecturecomponentstodolist.database.realm.model.Todo
-import com.dennisroters.realmarchitecturecomponentstodolist.database.realm.utils.todoDao
+import com.dennisroters.realmarchitecturecomponentstodolist.data.database.realm.model.Todo
+import com.dennisroters.realmarchitecturecomponentstodolist.data.database.realm.utils.todoDao
 import io.realm.Realm
 
 class TodoDetailViewModel: ViewModel() {

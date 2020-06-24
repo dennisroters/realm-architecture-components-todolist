@@ -1,12 +1,12 @@
-package com.dennisroters.realmarchitecturecomponentstodolist.components.todo
+package com.dennisroters.realmarchitecturecomponentstodolist.components.todoList
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import io.realm.Realm
 import androidx.recyclerview.widget.DiffUtil
 import com.dennisroters.realmarchitecturecomponentstodolist.R
-import com.dennisroters.realmarchitecturecomponentstodolist.database.realm.model.Todo
-import com.dennisroters.realmarchitecturecomponentstodolist.database.realm.utils.todoDao
+import com.dennisroters.realmarchitecturecomponentstodolist.data.database.realm.model.Todo
+import com.dennisroters.realmarchitecturecomponentstodolist.data.database.realm.utils.todoDao
 import com.dennisroters.realmarchitecturecomponentstodolist.utils.ItemTouchHelperAdapter
 import com.dennisroters.realmarchitecturecomponentstodolist.utils.inflate
 import java.util.*

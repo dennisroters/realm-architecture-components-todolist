@@ -1,8 +1,8 @@
-package com.dennisroters.realmarchitecturecomponentstodolist.database.realm.dao
+package com.dennisroters.realmarchitecturecomponentstodolist.data.database.realm.dao
 
-import com.dennisroters.realmarchitecturecomponentstodolist.database.realm.model.Todo
-import com.dennisroters.realmarchitecturecomponentstodolist.database.realm.utils.LiveRealmResults
-import com.dennisroters.realmarchitecturecomponentstodolist.database.realm.utils.asLiveData
+import com.dennisroters.realmarchitecturecomponentstodolist.data.database.realm.model.Todo
+import com.dennisroters.realmarchitecturecomponentstodolist.data.database.realm.utils.LiveRealmResults
+import com.dennisroters.realmarchitecturecomponentstodolist.data.database.realm.utils.asLiveData
 import io.realm.Realm
 import io.realm.Sort
 import io.realm.kotlin.where

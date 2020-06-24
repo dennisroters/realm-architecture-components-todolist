@@ -1,4 +1,4 @@
-package com.dennisroters.realmarchitecturecomponentstodolist.components.todo
+package com.dennisroters.realmarchitecturecomponentstodolist.components.todoList
 
 import android.graphics.Paint
 import android.view.View
@@ -12,10 +12,10 @@ class TodoListItemViewHolder(private val view: View) : RecyclerView.ViewHolder(v
     var viewModel: TodoListItemViewModel? = null
         set(value) {
             field = value
-            setupView()
+            bind()
         }
 
-    private fun setupView() {
+    private fun bind() {
         if (viewModel == null) return
 
         // Container

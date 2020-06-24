@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/dst_todoList"
-        android:name="com.dennisroters.realmarchitecturecomponentstodolist.components.todo.TodoListFragment"
+        android:name="com.dennisroters.realmarchitecturecomponentstodolist.components.todoList.TodoListFragment"
         android:label="TodoListFragment"
         tools:layout="@layout/fragment_todo_list">
 
@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/dst_todoDetail"
-        android:name="com.dennisroters.realmarchitecturecomponentstodolist.components.todo.detail.TodoDetailFragment"
+        android:name="com.dennisroters.realmarchitecturecomponentstodolist.components.todoDetail.TodoDetailFragment"
         android:label="TodoDetailFragment"
         tools:layout="@layout/fragment_todo_detail">
         <argument android:name="todoId" app:argType="string" app:nullable="true" android:defaultValue="0"/>

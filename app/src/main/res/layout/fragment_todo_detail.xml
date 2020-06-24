@@ -18,6 +18,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/todoDetail_title"
+                android:imeOptions="actionDone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -34,6 +35,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/todoDetail_notes"
+                android:imeOptions="actionDone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 

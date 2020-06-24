@@ -51,7 +51,7 @@ dependencies {
     kapt "androidx.room:room-compiler:$ROOM_VERSION" // use kapt for Kotlin
     testImplementation "androidx.room:room-testing:$ROOM_VERSION"
 
-    //Navigation
+    // Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$rootProject.navigationVersion"
     implementation "androidx.navigation:navigation-ui-ktx:$rootProject.navigationVersion"
 

@@ -1,6 +1,6 @@
-package com.dennisroters.realmarchitecturecomponentstodolist.database.realm.utils
+package com.dennisroters.realmarchitecturecomponentstodolist.data.database.realm.utils
 
-import com.dennisroters.realmarchitecturecomponentstodolist.database.realm.dao.TodoDao
+import com.dennisroters.realmarchitecturecomponentstodolist.data.database.realm.dao.TodoDao
 import io.realm.Realm
 import io.realm.RealmModel
 import io.realm.RealmResults

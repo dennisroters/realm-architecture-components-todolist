@@ -1,18 +1,15 @@
-package com.dennisroters.realmarchitecturecomponentstodolist.components.todo.detail
+package com.dennisroters.realmarchitecturecomponentstodolist.components.todoDetail
 
 import android.os.Bundle
-import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.EditorInfo
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.navArgs
 import com.dennisroters.realmarchitecturecomponentstodolist.R
-import com.dennisroters.realmarchitecturecomponentstodolist.database.realm.model.Todo
-import com.dennisroters.realmarchitecturecomponentstodolist.database.realm.utils.todoDao
+import com.dennisroters.realmarchitecturecomponentstodolist.data.database.realm.model.Todo
+import com.dennisroters.realmarchitecturecomponentstodolist.data.database.realm.utils.todoDao
 import com.dennisroters.realmarchitecturecomponentstodolist.utils.Coroutines
 import com.google.android.material.textfield.TextInputEditText
 import io.realm.Realm
@@ -48,29 +45,29 @@ class TodoDetailFragment : Fragment() {
 
         view.findViewById<TextInputEditText>(R.id.todoDetail_title).apply {
             setText(todo.title)
-            setOnEditorActionListener( TextView.OnEditorActionListener { v, actionId, event ->
-                if (actionId == EditorInfo.IME_ACTION_DONE || (event != null && event.keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    todo.title = text.toString()
-                    viewModel.updateTodo(todo)
-                    return@OnEditorActionListener true
-                }
-                return@OnEditorActionListener false
-            })
+            setOnFocusChangeListener { v, hasFocus ->
+                if (hasFocus) return@setOnFocusChangeListener
+                todo.title = text.toString()
+                viewModel.updateTodo(todo)
+            }
         }
 
         view.findViewById<TextInputEditText>(R.id.todoDetail_notes).apply {
             setText(todo.notes)
-            setOnEditorActionListener( TextView.OnEditorActionListener { v, actionId, event ->
-                if (actionId == EditorInfo.IME_ACTION_DONE || (event != null && event.keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    todo.notes = text.toString()
-                    viewModel.updateTodo(todo)
-                    return@OnEditorActionListener true
-                }
-                return@OnEditorActionListener false
-            })
+            setOnFocusChangeListener { v, hasFocus ->
+                if (hasFocus) return@setOnFocusChangeListener
+                todo.notes = text.toString()
+                viewModel.updateTodo(todo)
+            }
         }
 
 
+    }
+
+    override fun onStop() {
+
+
+        super.onStop()
     }
 
 

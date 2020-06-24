@@ -1,4 +1,4 @@
-//package com.dennisroters.realmarchitecturecomponentstodolist.database.realm.utils
+//package com.dennisroters.realmarchitecturecomponentstodolist.data.database.realm.utils
 //
 //import android.util.Log
 //import io.realm.Realm

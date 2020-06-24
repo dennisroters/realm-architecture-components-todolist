@@ -1,4 +1,4 @@
-package com.dennisroters.realmarchitecturecomponentstodolist.database.realm.model
+package com.dennisroters.realmarchitecturecomponentstodolist.data.database.realm.model
 
 import io.realm.RealmModel
 import io.realm.annotations.PrimaryKey

@@ -1,4 +1,4 @@
-package com.dennisroters.realmarchitecturecomponentstodolist.components.todo
+package com.dennisroters.realmarchitecturecomponentstodolist.components.todoList
 
 import android.os.Bundle
 import android.view.KeyEvent

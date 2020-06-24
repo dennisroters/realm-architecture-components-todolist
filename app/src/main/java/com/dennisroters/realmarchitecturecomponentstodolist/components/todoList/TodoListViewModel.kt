@@ -1,10 +1,10 @@
-package com.dennisroters.realmarchitecturecomponentstodolist.components.todo
+package com.dennisroters.realmarchitecturecomponentstodolist.components.todoList
 
 import androidx.lifecycle.ViewModel
 import java.util.*
-import com.dennisroters.realmarchitecturecomponentstodolist.database.realm.model.Todo
-import com.dennisroters.realmarchitecturecomponentstodolist.database.realm.utils.LiveRealmResults
-import com.dennisroters.realmarchitecturecomponentstodolist.database.realm.utils.todoDao
+import com.dennisroters.realmarchitecturecomponentstodolist.data.database.realm.model.Todo
+import com.dennisroters.realmarchitecturecomponentstodolist.data.database.realm.utils.LiveRealmResults
+import com.dennisroters.realmarchitecturecomponentstodolist.data.database.realm.utils.todoDao
 import io.realm.Realm
 
 
